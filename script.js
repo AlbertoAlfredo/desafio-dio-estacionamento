@@ -3,7 +3,13 @@
     var _a;
     const $ = (query) => document.querySelector(query);
     function patio() {
-        function ler() { }
+        function ler() {
+            return localStorage.patio ? JSON.parse(localStorage.patio) : [];
+        }
+        ;
+        function salvar(veiculos) {
+            localStorage.setItem("patio", JSON.stringify(veiculos));
+        }
         ;
         function adicionar(veiculo) {
             var _a;
@@ -17,11 +23,10 @@
                 </td>
             `;
             (_a = $('#patio')) === null || _a === void 0 ? void 0 : _a.appendChild(row);
+            salvar([...ler(), veiculo]);
         }
         ;
         function remover() { }
-        ;
-        function salvar() { }
         ;
         function render() { }
         ;
