@@ -16,9 +16,10 @@ interface Veiculo{
                 <td>${veiculo.placa}</td>
                 <td>${veiculo.entrada}</td>
                 <td>
-                    <Button class='excluir'>Excluir</Button>
+                    <Button class='excluir' data-placa='${veiculo.placa}'>Excluir</Button>
                 </td>
             `
+            $('#patio')?.appendChild(row)
         };
         function remover(){};
         function salvar(){};
